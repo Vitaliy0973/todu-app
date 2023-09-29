@@ -259,7 +259,7 @@ export const renderPage = container => {
       'pt-5',
   );
 
-  return {form, btnAdd, tbody};
+  return {title, form, btnAdd, tbody};
 };
 
 export const renderRow = (data, tbody, count = 0) => {

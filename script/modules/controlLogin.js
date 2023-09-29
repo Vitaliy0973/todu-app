@@ -1,4 +1,4 @@
-export const loginControl = async (modal, loginForm, btnLogin) =>
+export const loginControl = async (modal, loginForm, btnLogin, title) =>
   new Promise(resolve => {
     loginForm.addEventListener('submit', e => {
       e.preventDefault();
@@ -7,6 +7,9 @@ export const loginControl = async (modal, loginForm, btnLogin) =>
 
       modal.style.display = 'none';
       document.body.style.overflow = 'auto';
+
+      title.textContent += ` пользователя ${formData.get('name')[0]
+          .toUpperCase() + formData.get('name').slice(1)}`;
 
       resolve(formData.get('name'));
     });
