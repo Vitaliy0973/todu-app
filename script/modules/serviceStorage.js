@@ -7,7 +7,7 @@ export const setStorage = (key, user, data) => {
 };
 
 export const getUserStorage = (key, user) => {
-  const storageData = getStorage(key);
+  const storageData = getStorage(key) ?? {};
   if (!storageData.hasOwnProperty(user)) {
     storageData[user] = [];
     localStorage.setItem(key, JSON.stringify(storageData));
